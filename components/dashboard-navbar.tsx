@@ -16,11 +16,11 @@ const DashboardNavbar = () => {
   const pathname = usePathname();
 
   const routes = [
-    {
-      name: "Home",
-      href: "/dashboard",
-      current: pathname === "/dashboard",
-    },
+    // {
+    //   name: "Home",
+    //   href: "/dashboard",
+    //   current: pathname === "/dashboard",
+    // },
     {
       name: "Metadata",
       href: "/metadata",
