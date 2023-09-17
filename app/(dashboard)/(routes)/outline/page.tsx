@@ -102,7 +102,7 @@ const OutlinePage = () => {
       form.reset();
     } catch (error) {
       // TODO: Open pro modal
-      console.log("\n** [Metadata page error] **\n\n", error);
+      console.log("\n** [Outline page error] **\n\n", error);
     } finally {
       router.refresh();
     }
