@@ -101,6 +101,7 @@ const OutlinePage = () => {
       setFormattedMessages(response.data.content);
       form.reset();
     } catch (error) {
+      console.log(finalPrompt + "\n\n" + messages);
       // TODO: Open pro modal
       console.log("\n** [Outline page error] **\n\n", error);
     } finally {
