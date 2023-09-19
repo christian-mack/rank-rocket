@@ -34,30 +34,32 @@ const DashboardNavbar = () => {
   ];
 
   return (
-    <div className="flex justify-between">
-      <div>
-        <NavigationMenu>
-          <NavigationMenuList>
-            {routes.map((route) => (
-              <NavigationMenuItem key={route.name}>
-                <Link href={route.href} legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={cn(
-                      " hover:text-slate-800",
-                      route.current
-                        ? "text-green-600 hover:text-green-600"
-                        : "text-slate-400"
-                    )}>
-                    {route.name}
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-      <div>
-        <UserButton afterSignOutUrl="/" />
+    <div className="flex justify-center my-8">
+      <div className="flex w-full justify-between max-w-screen-xl">
+        <div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              {routes.map((route) => (
+                <NavigationMenuItem key={route.name}>
+                  <Link href={route.href} legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(
+                        " hover:text-purple-lightestPurple mr-3",
+                        route.current
+                          ? "text-white hover:text-white cursor-default"
+                          : "text-purple-lightPurple"
+                      )}>
+                      {route.name}
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+        <div>
+          <UserButton afterSignOutUrl="/" />
+        </div>
       </div>
     </div>
   );

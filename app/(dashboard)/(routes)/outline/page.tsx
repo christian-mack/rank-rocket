@@ -41,7 +41,7 @@ const OutlinePage = () => {
 
   const form = useForm<z.infer<typeof outlineFormSchema>>({
     // TODO: Determine if zod resolver is needed. Currently, that application doesn't work with it.
-    // resolver: zodResolver(outlineFormSchema),
+    resolver: zodResolver(outlineFormSchema),
     defaultValues: {
       prompt: "",
       template: "",
@@ -73,14 +73,18 @@ const OutlinePage = () => {
       ? "Possible title: " + data.possibleTitle + "\n"
       : "";
     const targetAudience = data.targetAudience
-      ? data.targetAudience + "\n"
+      ? "Target audience: " + data.targetAudience + "\n"
       : "";
-    const thesis = data.thesis ? data.thesis + "\n" : "";
+    const thesis = data.thesis ? "Thesis: " + data.thesis + "\n" : "";
     const brandRelevance = data.brandRelevance
-      ? data.brandRelevance + "\n"
+      ? "Brand relevance: " + data.brandRelevance + "\n"
       : "";
-    const searchIntent = data.searchIntent ? data.searchIntent + "\n" : "";
-    const uniqueContent = data.uniqueContent ? data.uniqueContent + "\n" : "";
+    const searchIntent = data.searchIntent
+      ? "Search intent: " + data.searchIntent + "\n"
+      : "";
+    const uniqueContent = data.uniqueContent
+      ? "Unique content: " + data.uniqueContent + "\n"
+      : "";
 
     const finalPrompt = `${reqTemplate.value}\n${topic}${possibleTitle}${targetAudience}${thesis}${brandRelevance}${searchIntent}${uniqueContent}`;
 
@@ -113,7 +117,7 @@ const OutlinePage = () => {
 
   return (
     <TooltipProvider>
-      <section className="flex flex-col w-full h-full">
+      <section className="flex flex-col w-full h-full text-purple-lightestPurple">
         <div className="w-full">
           <h1>Generate detailed content outlines</h1>
         </div>

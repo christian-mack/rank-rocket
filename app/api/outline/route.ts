@@ -31,7 +31,7 @@ export async function POST(req: Request) {
 
     return NextResponse.json(response.choices[0].message);
   } catch (error) {
-    console.log("\n** metadata route error**\n", error);
+    console.log("\n** outline route error**\n", error);
     return new NextResponse("Internal Server Error", { status: 500 });
   }
 }
